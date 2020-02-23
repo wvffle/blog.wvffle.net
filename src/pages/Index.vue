@@ -1,33 +1,46 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    <div v-for="post in posts" :key="post.id">
+      <g-link :to="post.path">{{ post.title }}</g-link>
+    </div>
   </Layout>
 </template>
 
-<script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
+<page-query>
+  query Post {
+    posts: allPost {
+      edges {
+        node {
+          title
+          path
+          created_at
+        }
+      }
+    }
   }
-}
+</page-query>
+
+<script>
+  import moment from 'moment'
+  export default {
+    name: 'Index',
+    computed: {
+      posts () {
+        return this.$page.posts.edges.map(({ node }) => {
+          return {
+            ...node,
+            created_at: moment(node.created_at)
+          }
+        }).sort((left, right) => {
+          return left.created_at.diff(right.created_at) * -1
+        }).map(post => {
+          post.created_at = post.created_at.format('DD MMM YYYY')
+          return post
+        })
+      }
+    }
+  }
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
 </style>
