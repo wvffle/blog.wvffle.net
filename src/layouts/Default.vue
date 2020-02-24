@@ -1,6 +1,6 @@
 <template>
   <div class="pt-56 h-screen">
-    <div class="header-container fixed left-0 top-0 w-full">
+    <div class="header-container fixed left-0 top-0 w-full z-10">
       <g-link to="/" class="flex items-center justify-center pt-6 pb-10 header bg-white">
         <g-image src="~/avatar.jpg" alt="" class="w-20 rounded-full mr-4 avatar"></g-image>
         <div class="float-left">
@@ -12,6 +12,7 @@
     <div class="container mx-auto text-gray-900">
       <slot/>
     </div>
+    <div class="text-center text-gray-500 py-10 text-xs">:wq</div>
   </div>
 </template>
 

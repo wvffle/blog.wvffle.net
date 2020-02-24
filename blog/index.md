@@ -2,7 +2,7 @@
 title: Hello, world!
 created_at: 2020-02-23T18:19:39.600Z
 updated_at: 2020-02-23T18:19:39.600Z
-image: 00-intro.jpg
+image: "./images/00-intro.jpg"
 ---
 
 # Heading 1
