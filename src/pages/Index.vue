@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="post-item rounded-lg overflow-hidden relative">
+    <div class="post-item rounded-lg overflow-hidden relative shadow-2xl mb-4">
       <g-image :src="posts[0].image" class="w-full object-bottom"></g-image>
       <g-link :to="posts[0].path">
         <div class="title">
@@ -10,7 +10,7 @@
       </g-link>
     </div>
     <div class="grid grid-cols-2 gap-10">
-      <div v-for="post in posts.slice(1)" :key="post.id" class="post-item rounded-lg overflow-hidden relative">
+      <div v-for="post in posts.slice(1)" :key="post.id" class="post-item rounded-lg overflow-hidden relative shadow-xl">
         <g-image :src="post.image"></g-image>
         <g-link :to="post.path">
           <div class="title">

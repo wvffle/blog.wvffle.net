@@ -4,8 +4,8 @@
       <g-link to="/" class="flex items-center justify-center pt-6 pb-10 header bg-white">
         <g-image src="~/avatar.jpg" alt="" class="w-20 rounded-full mr-4 avatar"></g-image>
         <div class="float-left">
-          <div class="text-2xl">Kasper Seweryn</div>
-          <div class="text-sm text-orange-400">Javascript/Frontend developer blog</div>
+          <div class="text-2xl text-gray-800">Kasper Seweryn</div>
+          <div class="text-sm">Javascript/Frontend developer blog</div>
         </div>
       </g-link>
     </div>

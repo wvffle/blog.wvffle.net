@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <a href="https://paypal.me/wvffle" target="_blank" class="py-4 px-6 text-gray-700 rounded-lg text-sm grid shadow-xl" style="grid-template-columns: min-content 1fr">
+    <a href="https://paypal.me/wvffle" target="_blank" class="py-4 px-6 text-gray-700 rounded-lg text-sm grid shadow-xl" style="grid-template-columns: min-content 1fr; text-decoration: none">
       <div class="w-24">
         <svg class="h-full" height="1px" viewBox="0 0 256 302" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
           <g>
