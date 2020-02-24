@@ -60,6 +60,36 @@ query {
 
     &:hover
       text-decoration underline
+
+    &[aria-hidden=true]
+      width 0
+      height 0
+      display block
+      visibility hidden
+
+  code
+    vertical-align middle
+    font-size .875rem
+    border-radius 0.5rem
+    background #1a202c
+    color #fff
+    padding .25rem .5rem
+
+  pre
+    code
+      display block
+      margin-bottom 2rem
+      padding 1rem
+      box-shadow 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+
+  blockquote
+    border-left .5rem solid #f6ad55
+    padding .5rem 1rem .5rem 1rem
+    color #4a5568
+    margin-bottom 2rem
+
+    > p
+      margin-bottom 0
 </style>
 
 <style scoped lang="stylus">

@@ -2,8 +2,9 @@
   <Layout>
     <div class="post mx-auto text-xl">
       <div class="text-4xl font-bold">{{ $page.post.title }}</div>
-      <div class="text-sm text-gray-700 mb-8">{{ date($page.post.created_at) }}</div>
+      <p class="text-sm text-gray-700 mb-8">{{ date($page.post.created_at) }}</p>
       <g-image :src="$page.post.image"></g-image>
+      <p class="text-xs text-gray-400 italic" v-html="getSource($page.post.image.src)"></p>
       <vue-remark-content>
         <template v-slot:donate>
           <donate-button></donate-button>
@@ -37,6 +38,20 @@
     methods: {
       date (date) {
         return moment(date).format('DD MMM YYYY')
+      },
+      getSource (image) {
+
+        return image.replace(/.+images\/([^.]+)\..+/, (_, match) => {
+          const tokens = match.split('-')
+          const service = tokens.shift()
+
+
+          if (service  === 'unsplash') {
+            return `Unsplash: <a href="https://unsplash.com/photos/${tokens.shift()}" target="_blank">${tokens.join(' ')}</a>`
+          }
+
+          return ''
+        })
       }
     }
   }
