@@ -75,8 +75,15 @@ query {
     color #fff
     padding .25rem .5rem
 
-  pre
-    code
+  pre[class*=language-]
+    padding 0
+    margin 0
+    background transparent !important
+    overflow initial
+
+    code[class*=language-]
+      @extend code
+      text-shadow none
       display block
       margin-bottom 2rem
       padding 1rem
@@ -90,6 +97,9 @@ query {
 
     > p
       margin-bottom 0
+
+  .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string
+    background transparent
 </style>
 
 <style scoped lang="stylus">

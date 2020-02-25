@@ -47,7 +47,8 @@ const admins = [ 'wvffle' ]
 
 const commands = { 
   exit () {
-    bot.exit()
+    this.chat('bye bye!')
+    this.exit()
   }   
 }
 
@@ -60,7 +61,7 @@ bot.on('whisper', (username, message) => {
   const cmd = args.shift()
 
   if (cmd in commands) {
-    commands[cmd]()
+    commands[cmd].apply(bot, args)
   }
 })
 ```
